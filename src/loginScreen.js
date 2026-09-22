@@ -3,6 +3,12 @@ import { createContext, useContext, useState } from 'react';
 import { Eye, EyeClosed } from 'lucide-react-native';
 import { Link } from 'expo-router';
 
+// kamo nay bahala ug sabot dani HAHAHAAHAHAHAHHAHAHAHAHAHA
+// All I did was just do some branching logic sa text input and buttons para
+// na mas "modular" (for lack of a better term) ang akong code instead of writing
+// them all in one function
+
+// this will be used for the username, password, setUsername, and setPassword
 const LoginContext = createContext();
 
 function TextInputComp({placeholderText, inputType}) {
@@ -24,6 +30,7 @@ function TextInputComp({placeholderText, inputType}) {
   ) ;
 }
 
+// igo ra dayon i print ang username and password after pressing the submit button
 function handleSubmit(username, password) {
   console.log(`
 	username: ${username}
