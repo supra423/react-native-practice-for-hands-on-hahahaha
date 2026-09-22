@@ -1,9 +1,10 @@
 {
   "name": "prac0",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "expo-router/entry",
   "dependencies": {
     "expo": "~57.0.24",
+    "expo-router": "^57.0.22",
     "expo-status-bar": "~57.0.1",
     "lucide-react-native": "^1.47.0",
     "react": "19.2.3",
