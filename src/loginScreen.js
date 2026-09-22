@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { createContext, useContext, useState } from 'react';
 import { Eye, EyeClosed } from 'lucide-react-native';
+import { Link } from 'expo-router';
 
 const LoginContext = createContext();
 
@@ -37,9 +38,11 @@ function ButtonComp({buttonType}) {
 	    <Text style={{color: "#000"}}>Login</Text>
 	  </TouchableOpacity>
   ) : buttonType === "register" ? (
-	  <TouchableOpacity style={styles.registerButton}>
-	    <Text style={{color: "#fff"}}>Register</Text>
-	  </TouchableOpacity>
+	  <Link href="/register" asChild>
+	    <TouchableOpacity style={styles.registerButton}>
+	      <Text style={{color: "#fff"}}>Register</Text>
+	    </TouchableOpacity>
+	  </Link>
   ) : (
  	<Text>unknown button type!</Text> 
   );
