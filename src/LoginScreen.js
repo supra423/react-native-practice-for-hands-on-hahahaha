@@ -6,11 +6,12 @@ const LoginContext = createContext();
 
 function TextInputComp({placeholderText, inputType}) {
   const {username, password, setUsername, setPassword} = useContext(LoginContext);
+  const [eyeStatus, setEye] = useState(false); // true is open, false is close
   return inputType === "password" ? (
     <View style={styles.textInput}>
-      <TextInput placeholder={placeholderText} style={{flex: 1}} secureTextEntry={true} value={password} onChangeText={setPassword}></TextInput>
-	  <TouchableOpacity>
-        <EyeClosed />
+      <TextInput placeholder={placeholderText} style={{flex: 1}} secureTextEntry={!eyeStatus} value={password} onChangeText={setPassword}></TextInput>
+	  <TouchableOpacity onPress={() => setEye(!eyeStatus)}>
+	    {eyeStatus ? (<Eye/>) : ( <EyeClosed/>)}
 	  </TouchableOpacity>
     </View>
   ) : inputType === "username" ? (
